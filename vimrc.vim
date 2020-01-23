@@ -117,3 +117,7 @@ nnoremap <Leader>wf :call DisableHighlightTrailingWS()<CR>
 nnoremap <Leader>p :ptjump <C-R><C-W><CR>
 nnoremap <Leader>s :stjump <C-R><C-W><CR>
 
+set showtabline=1 " show tabline only if there are at least two tab
+set wildmenu " show menu when pressing TAB in command mode
+set wildmode=list:longest " complete with longest common string
+set wildignore=*.o,*.obj,*.bak,*.exe,*~ " do not complete with some pattern
