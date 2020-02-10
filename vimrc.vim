@@ -25,19 +25,22 @@ nnoremap <C-M><C-R> :source ~/.vimrc<CR>
 cabbr <expr> %% expand('%:h')
 
 colorscheme desert
-if has("gui_running")
-    colorscheme desert
-    nnoremap <C-O> :browse confirm e<CR>
-    inoremap <C-O> <ESC>:browse confirm e<CR>
-    set guioptions-=T
-    if has("gui_gtk2")
-        set guifont=Monospace\ 9
-    elseif has("x11")
-        set guifont=-*-courier-medium-r-normal-*-*-160-*-*-m-*-*
-    else
-        set guifont=Courier_New:h11:cDEFAULT
-    endif
+if !has('gui_running')
+    set t_Co=256
 endif
+"if has("gui_running")
+"    colorscheme desert
+"    nnoremap <C-O> :browse confirm e<CR>
+"    inoremap <C-O> <ESC>:browse confirm e<CR>
+"    set guioptions-=T
+"    if has("gui_gtk2")
+"        set guifont=Monospace\ 9
+"    elseif has("x11")
+"        set guifont=-*-courier-medium-r-normal-*-*-160-*-*-m-*-*
+"    else
+"        set guifont=Courier_New:h11:cDEFAULT
+"    endif
+"endif
 
 let mapleader = "!"
 
