@@ -19,6 +19,11 @@ set scrolloff=5 "lines visible above and under cursor
 
 nnoremap <C-M><C-R> :source ~/.vimrc<CR>
 
+" Abbreviation in command mode to replace '%%' with the path of the current
+" file
+" http://vim.wikia.com/wiki/Easy_edit_of_files_in_the_same_directory
+cabbr <expr> %% expand('%:h')
+
 colorscheme desert
 if has("gui_running")
     colorscheme desert
