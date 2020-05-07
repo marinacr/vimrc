@@ -28,6 +28,9 @@ colorscheme desert
 if !has('gui_running')
     set t_Co=256
 endif
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }
 "if has("gui_running")
 "    colorscheme desert
 "    nnoremap <C-O> :browse confirm e<CR>
@@ -101,3 +104,17 @@ autocmd InsertEnter * call MatchTrailingWSExceptCurrent()
 autocmd InsertLeave * call MatchTrailingWS()
 autocmd BufWinLeave * call clearmatches()
 
+""""""""""""""""""""""""""""""""""""""""
+" C langage
+"""""""""""""""""""""""""""""""""""""""
+" Add include guard in header file
+function! CHdrGuard()
+    let l:filename = expand("%:t")
+    let l:guard = "__" . substitute(toupper(l:filename), "\\.", "_", "g") . "__"
+    let l:guard = substitute(l:guard, "-", "_", "g")
+    exec "normal ggO#ifndef " . l:guard
+    exec "normal o#define " . l:guard
+    exec "normal Go#endif /* " . l:guard . " */"
+    exec "normal O"
+endfunction
+command! -bang -nargs=0 CHdrGuard call CHdrGuard()
