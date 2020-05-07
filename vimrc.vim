@@ -47,9 +47,6 @@ let g:lightline = {
 
 let mapleader = "!"
 
-" highlight trailing spaces on/off \wn / \wf
-nnoremap <Leader>wn :call EnableHighlightTrailingWS()<CR>
-nnoremap <Leader>wf :call DisableHighlightTrailingWS()<CR>
 
 nnoremap <Leader>z :tjump <C-R><C-W><CR>
 " open a preview window and jump to tag under cursor
@@ -58,7 +55,6 @@ nnoremap <Leader>p :ptjump <C-R><C-W><CR>
 " jump to tag under cursor in a new window
 nnoremap <Leader>s :stjump <C-R><C-W><CR>
 nnoremap <Leader>t :tab split <CR> :tjump <C-R><C-W><CR>zt
-
 
 set showtabline=1 " show tabline only if there are at least two tab
 set wildmenu " show menu when pressing TAB in command mode
@@ -104,6 +100,9 @@ autocmd InsertEnter * call MatchTrailingWSExceptCurrent()
 autocmd InsertLeave * call MatchTrailingWS()
 autocmd BufWinLeave * call clearmatches()
 
+" highlight trailing spaces on/off \wn / \wf
+nnoremap <Leader>wn :call EnableHighlightTrailingWS()<CR>
+nnoremap <Leader>wf :call DisableHighlightTrailingWS()<CR>
 """"""""""""""""""""""""""""""""""""""""
 " C langage
 """""""""""""""""""""""""""""""""""""""
