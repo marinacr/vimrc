@@ -103,9 +103,11 @@ autocmd BufWinLeave * call clearmatches()
 " highlight trailing spaces on/off \wn / \wf
 nnoremap <Leader>wn :call EnableHighlightTrailingWS()<CR>
 nnoremap <Leader>wf :call DisableHighlightTrailingWS()<CR>
+
 """"""""""""""""""""""""""""""""""""""""
 " C langage
 """""""""""""""""""""""""""""""""""""""
+
 " Add include guard in header file
 function! CHdrGuard()
     let l:filename = expand("%:t")
@@ -117,3 +119,10 @@ function! CHdrGuard()
     exec "normal O"
 endfunction
 command! -bang -nargs=0 CHdrGuard call CHdrGuard()
+
+" Insert a comment at end of line
+function! CCommentInsertion()
+    exec "normal A /*   */"
+    exec "normal F ;"
+endfunction
+command! -bang -nargs=0 CCommentInsertion call CCommentInsertion()
