@@ -120,9 +120,8 @@ function! CHdrGuard()
 endfunction
 command! -bang -nargs=0 CHdrGuard call CHdrGuard()
 
-" Insert a comment at end of line
-function! CCommentInsertion()
-    exec "normal A /*   */"
-    exec "normal F ;"
+" Insert a comment at end of line with comment in argument
+function! CCommentInsertion(comment)
+    exec "normal A /* " . a:comment . " */"
 endfunction
-command! -bang -nargs=0 CCommentInsertion call CCommentInsertion()
+command! -bang -nargs=1 CCommentInsertion call CCommentInsertion(<args>)
