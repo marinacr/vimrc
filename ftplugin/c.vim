@@ -29,11 +29,12 @@ endfunction
 command! -bang -nargs=1 CCommentInsertion call CCommentInsertion(<args>)
 
 "Launch GDB
-function! LaunchGDB(elf_file)
+function! LaunchGDB(gdb, elf_file)
     let g:termdebug_popup = 0
     let g:termdebug_wide = 163
-    let g:termdebugger = "gdb-multiarch"
+    let g:termdebugger = a:gdb
     exec "packadd termdebug"
     exec "Termdebug " . a:elf_file
 endfunction
-command! -bang -nargs=1 LaunchGDB call LaunchGDB(<args>)
+command! -complete=file -nargs=+ LaunchGDB call LaunchGDB(<f-args>)
+command! -complete=file -nargs=+ GdbMultiarch call LaunchGDB("gdb-multiarch", <f-args>)
