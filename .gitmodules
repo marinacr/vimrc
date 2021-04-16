@@ -7,3 +7,6 @@
 [submodule "/home/marina/.vim/pack/plugins/start/autosess"]
 	path = /home/marina/.vim/pack/plugins/start/autosess
 	url = https://github.com/powerman/vim-plugin-autosess.git
+[submodule "pack/plugins/start/sleuth"]
+	path = pack/plugins/start/sleuth
+	url = https://tpope.io/vim/sleuth.git
