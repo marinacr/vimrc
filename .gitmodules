@@ -4,3 +4,6 @@
 [submodule "pack/plugins/start/lightline"]
 	path = pack/plugins/start/lightline
 	url = https://github.com/itchyny/lightline.vim.git
+[submodule "/home/marina/.vim/pack/plugins/start/autosess"]
+	path = /home/marina/.vim/pack/plugins/start/autosess
+	url = https://github.com/powerman/vim-plugin-autosess.git
