@@ -105,3 +105,5 @@ autocmd BufWinLeave * call clearmatches()
 nnoremap <Leader>wn :call EnableHighlightTrailingWS()<CR>
 nnoremap <Leader>wf :call DisableHighlightTrailingWS()<CR>
 
+"filetype
+autocmd BufNEwFile,BufRead *.overlay setlocal filetype=dts
