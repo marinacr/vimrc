@@ -1,7 +1,7 @@
 # Download repo
 
 ```
-git clone https://github.com/marinacr/vimrc.git $HOME/.vim
+git clone --recurse-submodules https://github.com/marinacr/vimrc.git $HOME/.vim
 ```
 
 # Setup vimrc
