@@ -38,3 +38,24 @@ function! LaunchGDB(gdb, elf_file)
 endfunction
 command! -complete=file -nargs=+ LaunchGDB call LaunchGDB(<f-args>)
 command! -complete=file -nargs=+ GdbMultiarch call LaunchGDB("gdb-multiarch", <f-args>)
+
+" indent argument split on multiple lines aligned on the first arg
+" func(arg1,
+"      arg2);
+setlocal cinoptions+=(0
+
+" return 1 when editing for zephyr
+function! IsZephyr()
+    let l:path = expand('%:p')
+    if l:path =~ 'zephyr'
+        return 1
+    else
+        return 0
+    endif
+endfunction
+
+if (IsZephyr())
+    setlocal shiftwidth=8
+    setlocal tabstop=8
+    setlocal noexpandtab
+endif
